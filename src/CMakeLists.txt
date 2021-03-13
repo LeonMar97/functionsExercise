@@ -1,0 +1,1 @@
+target_sources (fun PRIVATE "main.cpp")
