@@ -1,0 +1,42 @@
+@startuml
+class Fun{
+protected:
+string m_Equation;
+ std::Vector<Base> m_evaluation;
+calculate_equ(double x){}
+}
+class Base{
+Components m_Fun_Comp;
+double virtual function whatIdo(double )=0;
+}
+class Sin{
+int x;
+}
+class Monomial{
+
+}
+class Ln{
+
+}
+struct Components{
+char sign;
+char c
+};
+
+enum Compo{
+
+char mul='*',
+char ='/',
+char 
+
+}
+
+
+
+
+
+Sin--|> Base
+Monomial--|> Base
+Ln--|> Base
+
+@enduml
