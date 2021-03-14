@@ -1,42 +1,30 @@
 @startuml
-class Fun{
+
+
+
+class Complex_Fun{ 
+std::vactor<function*> m_Comp;
+}
+class Function{
 protected:
 string m_Equation;
- std::Vector<Base> m_evaluation;
-calculate_equ(double x){}
-}
-class Base{
-Components m_Fun_Comp;
-double virtual function whatIdo(double )=0;
+double virtual function calculate(double)=0;//val
+String virtual function return_Name (){return m_Equation};//name
 }
 class Sin{
-int x;
 }
-class Monomial{
+class Polinom{
 
 }
+
 class Ln{
 
 }
-struct Components{
-char sign;
-char c
-};
-
-enum Compo{
-
-char mul='*',
-char ='/',
-char 
-
-}
+Sin--|>Function
+Polinom--|> Function
+Ln--|>Function
+Complex_Fun--|>Function
 
 
-
-
-
-Sin--|> Base
-Monomial--|> Base
-Ln--|> Base
 
 @enduml

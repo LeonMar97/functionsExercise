@@ -1,13 +1,14 @@
-#include<iostream>
-#include <iostream>
 #include <cmath>
-#include <string>
+#include <Poly.h>
 
 
 int main() {
 	int x = 8;
-	std::to_string(sin(x));
-	std::cout << std::to_string(sin(x));;
 
+	std::vector<int>co = { 4,5,6 };
+	Poly z(co);
+	
+	std::cout << z.calculate(1);
+	
 	return true;
 }
