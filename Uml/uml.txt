@@ -5,6 +5,8 @@ std::shared_ptr<Function*> operand_r;
 std::shared_ptr<Function*> operand_l;
 }
 class Function{
+public:
+Function(std::string name):m_Equation(name){}
 private:
 string m_Equation;
 double virtual function calculate(double)=0;//val
@@ -13,6 +15,12 @@ void virtual function print (){std::cout<< m_Equation};//name
 
 }
 class Log{
+Log():Function("ln(x)"){}//default constrcator
+Log(double x):Function("Log_"+){}//default constrcator
+
+
+}
+
 }
 class Sin{
 double calculate(double x) {return sin(x);}
