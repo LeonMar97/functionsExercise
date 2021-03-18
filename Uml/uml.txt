@@ -1,30 +1,58 @@
 @startuml
-
-
-
 class Complex_Fun{ 
-std::vactor<function*> m_Comp;
+
+std::shared_ptr<Function*> operand_r;
+std::shared_ptr<Function*> operand_l;
 }
 class Function{
-protected:
+private:
 string m_Equation;
 double virtual function calculate(double)=0;//val
 String virtual function return_Name (){return m_Equation};//name
+void virtual function print (){std::cout<< m_Equation};//name
+
+}
+class Log{
 }
 class Sin{
+double calculate(double x) {return sin(x);}
 }
-class Polinom{
-
+class Polynomial{
+std::vector<int> m_coefficients;
+double calculate(double x);
 }
-
 class Ln{
+double calculate(double x) {return log(x);}
+}
+
+class compose_functions{
+compose_Functions(){//constractor
+}
+double virtual function calculate(double ){
+operand_l.calculate(operand_r.calculate());
+}
+void virtual function return_Name (){return m_Equation};//name
+}
+
+class sum_functions{
+compose_Functions(){//constractor
+double virtual function calculate(double){
+operand_l+operand_r;}
+}
+class mul_functions{
+compose_Functions(){//constractor
+double virtual function calculate(double){
+operand_l*operand_r;
+}
 
 }
+
 Sin--|>Function
-Polinom--|> Function
+Polynomial--|> Function
 Ln--|>Function
+class Log--|>Function
 Complex_Fun--|>Function
-
-
-
+compose_functions--|>Complex_Fun
+sum_functions--|>Complex_Fun
+compose_functions--|>Complex_Fun
 @enduml
