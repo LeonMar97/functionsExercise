@@ -9,6 +9,4 @@ private:
 public:
 	Poly(std::vector<int> cur);
 	 double virtual calculate(double x) const;//val
-
-
 };

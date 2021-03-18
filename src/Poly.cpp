@@ -1,6 +1,6 @@
 #include<Poly.h>
 Poly::Poly(std::vector<int> cur) 
-	: m_coefficients(cur), Function(cur) {}
+	: m_coefficients(cur), Function(cur), m_deg(cur[0]) {}
 
 double Poly::calculate(double x) const{//val
 	double sum=0;
