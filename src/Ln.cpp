@@ -10,5 +10,5 @@ Log::Log(int N) : Function("log_" + std::to_string(N) + "(x)"), ln_base(std::log
 
 //return log of x in the given base
 double Log::calculate(double x) const{
-	return std::log(x)*ln_base;
+	return std::log(x)/ln_base;
 }

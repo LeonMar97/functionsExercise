@@ -1,6 +1,7 @@
 #include <cmath>
 #include <Poly.h>
 #include <Sin.h>
+#include <Ln.h>
 #include <macros.h>
 #include <iomanip>
 
@@ -30,10 +31,18 @@ int main() {
 	std::vector<int>co = { 4,5,6,0,3 };
 	Poly z(co);
 	auto sin = Sin();
+	auto log = Log();
+	auto log_5 = Log(5);
 	sin.print();
 	std::cout << std::endl;
 	z.print();
+
 	std::cout << std::endl;
-	std::cout << "value at 1: " << z.calculate(1.84);
+	log.print();
+	std::cout << std::endl;
+	log_5.print();
+	std::cout << std::endl;
+	std::cout << "value at 1: " << z.calculate(1.84) << std::endl;
+	std::cout << "log_5 of 5 is: " << log_5.calculate(5);
 	return true;
 }
