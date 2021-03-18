@@ -1,13 +1,11 @@
 #include <Function.h>
 
-Function::Function(std::string equation) {
-	m_equation = equation;
-}
+Function::Function(std::string equation) : m_equation(equation) {}
 
-Function::print() const{
+void Function::print() const{
 	std::cout << m_equation;
 }
 
-Function::getName() const {
+std::string Function::get_equation() const {
 	return m_equation;
 }

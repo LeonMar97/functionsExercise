@@ -13,10 +13,7 @@
 
 }
 */
-		
-
-
-int main() {
+	int main() {
 	int x = 8;
 	double inp;
 	while ((std::cin >> inp)) {
@@ -25,10 +22,6 @@ int main() {
 		else
 			break;
 	}
-
-
-
-
 	std::vector<int>co = { 4,5,6 };
 	Poly z(co);
 	
@@ -36,7 +29,3 @@ int main() {
 	
 	return true;
 }
-
-
-
-
