@@ -1,6 +1,12 @@
-#include<Functions.h>
-class Complex_Fun::public Function {
+#include "Function.h"
+class Complex:public Function {
+public:
+	
+	double calculate_left(double x)const;
+	double calculate_right(double x)const;
 
-	std::shared_ptr<Function*> m_operand_r;
-	std::shared_ptr<Function*> m_operand_l;
-}
+private:
+	std::shared_ptr<Function> m_operandR;//right
+	std::shared_ptr<Function> m_operandL;//left
+
+};

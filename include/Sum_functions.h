@@ -1,11 +1,11 @@
-#include<Complex.h>
+#include "Complex.h"
 #include<vector>
 #pragma once
-class sum_functions::Complex {
+class Sum_functions::public Complex {
 public:
-		sum_functions() {//constractor
-			double virtual function calculate(double) {
-				return operand_l.calcualte() + operand_r.calcualte();
+	//sum_functions(Function_l&, Function_r&);
+			double virtual function calculate(double)const {
+				//return m_operandL.get()->calcualte() + m_operandR.get()->calcualte();
 			};
 	
 };
