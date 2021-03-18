@@ -8,5 +8,5 @@ public:
 	Log(int N);
 	double calculate(double x) const;
 private:
-	int ln_base
+	int ln_base;
 };

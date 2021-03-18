@@ -11,7 +11,5 @@ public:
 	Function(std::string);
 	double virtual calculate(double x) const = 0;
 	void print() const;
-	std::string get_equation() const {}
-
+	std::string get_equation() const;
 };
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
