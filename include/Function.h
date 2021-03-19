@@ -2,6 +2,7 @@
 #include<iostream>
 #include<cstdlib>
 #include <string>
+#include <vector>
 #include <memory>
 #pragma once
 
@@ -11,6 +12,7 @@ private:
 public:
 	Function() { m_equation = "default"; };
 	Function(std::string);
+	Function(std::vector<int>);
 	double virtual calculate(double x) const = 0;
 	void print() const;
 	std::string get_equation() const;

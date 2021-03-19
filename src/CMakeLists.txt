@@ -1,4 +1,5 @@
-target_sources (fun PRIVATE "main.cpp"	
+target_sources (fun PRIVATE "main.cpp"
 							"Poly.cpp"
-							"Complex.cpp"
+							"Ln.cpp"
+							"Sin.cpp"
 							"Function.cpp")
