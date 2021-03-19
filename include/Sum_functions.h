@@ -2,12 +2,14 @@
 #include<vector>
 #pragma once
 class Sum_functions:public Complex {
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 public:
-	Sum_functions(Function  & Function_l , Function &Function_r);
+	Sum_functions(Function& func_l, Function& func_r);
+	double  calculate(double x) const override;
 
-	//sum_functions(Function_l&, Function_r&);
-			double calculate(double)const override {
-				//return m_operandL.get()->calcualte() + m_operandR.get()->calcualte();
-			};
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+private:		
+	std::string create_equation(const Function& f_l, const Function& f_r)const override;
+
 	
 };
