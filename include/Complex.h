@@ -1,7 +1,7 @@
 #include "Function.h"
 class Complex:public Function {
 public:
-	
+	Complex(Function&, Function&);
 	double calculate_left(double x)const;
 	double calculate_right(double x)const;
 

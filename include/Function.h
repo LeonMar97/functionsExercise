@@ -2,12 +2,14 @@
 #include<iostream>
 #include<cstdlib>
 #include <string>
+#include <memory>
 #pragma once
 
 class Function {
 private:
 	std::string m_equation;
 public:
+	Function() { m_equation = "default"; };
 	Function(std::string);
 	double virtual calculate(double x) const = 0;
 	void print() const;
