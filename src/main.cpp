@@ -28,7 +28,7 @@ int main() {
 			break;
 	}
 	*/
-	std::vector<int>co = { 4,5,6,0,3 };
+	std::vector<int>co = { 0,5,6,0,3 };
 	Poly z(co);
 	auto sin = Sin();
 	auto log = Log();

@@ -5,8 +5,9 @@
 class Poly:public Function {
 private:
 	std::vector<int>m_coefficients;
-	int m_deg;
 public:
+	
+	std::string create_string(std::vector<int> poly_coefficients);
 	Poly(std::vector<int> cur);
 	 double virtual calculate(double x) const;//val
 };

@@ -1,8 +1,9 @@
 #include "Complex.h"
 
-Complex::Complex(Function& left, Function& right) 
+Complex::Complex(Function& left, Function& right,std::string equation) 
 :
-m_operandL(std::make_shared<Function>(left)), m_operandR(std::make_shared<Function>(right))
+m_operandL(std::make_shared<Function>(left)), m_operandR(std::make_shared<Function>(right)),
+Function(equation)
 {
 }
 
