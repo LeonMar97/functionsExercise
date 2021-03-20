@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <Sum_functions.h>
 #include <Mul_functions.h>
+#include <Compose_functions.h>
 #pragma once
 
 /*
@@ -33,7 +34,8 @@ int main() {
 
 	std::shared_ptr<Function> sum = std::make_shared<Sum_functions>(p, r);
 	std::shared_ptr<Function> mul = std::make_shared<Mul_functions>(p, r);
-	std::cout << mul.get()->get_equation() << ' ' << mul.get()->calculate(2) << std::endl;
+	std::shared_ptr<Function> comp= std::make_shared<Compose_functions>(p, r);
+	std::cout << comp.get()->get_equation() << ' ' << comp.get()->calculate(2) << std::endl;
 
 	
 	/*
