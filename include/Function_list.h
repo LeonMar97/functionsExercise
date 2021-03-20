@@ -14,6 +14,5 @@ private:
 	std::vector<std::shared_ptr<Function>>m_list;//function list
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~private functions~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 private:
-	bool handle_requst(char* request);
 
 };

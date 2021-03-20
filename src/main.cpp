@@ -2,11 +2,11 @@
 #include <Poly.h>
 #include <Sin.h>
 #include <Log.h>
-#include <macros.h>
 #include <iomanip>
 #include <Sum_functions.h>
 #include <Mul_functions.h>
 #include <Compose_functions.h>
+#include <Function_list.h>
 #pragma once
 
 /*
@@ -21,7 +21,11 @@
 }
 */
 int main() {
+
+	auto l = Function_list();
+	l.run();
 	
+	/*
 	std::cout << std::setprecision(2) << std::fixed;
 
 	std::shared_ptr<Function> l = std::make_shared<Log>(5);
@@ -37,6 +41,7 @@ int main() {
 	std::shared_ptr<Function> tryhard = std::make_shared<Compose_functions>(comp, r);
 	std::cout << comp.get()->get_equation() << ' ' << comp.get()->calculate(2) << std::endl;
 	//std::cout << tryhard.get()->get_equation() << ' ' << tryhard.get()->calculate(2) << std::endl;
+	*/
 	
 	/*
 	int x = 8;
