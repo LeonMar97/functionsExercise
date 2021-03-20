@@ -1,11 +1,7 @@
 #include "Complex.h"
 
-Complex::Complex(Function& left, Function& right,std::string equation) 
-:
-m_operandL(std::make_shared<Function>(left)), m_operandR(std::make_shared<Function>(right)),
-Function(equation)
-{
-}
+Complex::Complex(std::shared_ptr<Function> left, std::shared_ptr<Function> right, std::string equation)
+	: m_operandL(left), m_operandR(right), Function(equation) {}
 
 
 
@@ -21,4 +17,3 @@ double Complex::calculate_right(double x)const{
 double Complex::calculate_left(double x)const {
 	return m_operandL.get()->calculate(x);
 }
-

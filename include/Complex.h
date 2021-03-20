@@ -1,7 +1,8 @@
 #include "Function.h"
+#include <memory>
 class Complex:public Function {
 public:
-	Complex(Function&, Function&,std::string equation);
+	Complex(std::shared_ptr<Function>, std::shared_ptr<Function>, std::string equation);
 	double calculate_left(double x)const;
 	double calculate_right(double x)const;
 	std::string virtual create_equation(const Function &f_l, const Function& f_r )const=0;
