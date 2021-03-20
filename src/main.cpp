@@ -24,19 +24,19 @@ int main() {
 	
 	std::cout << std::setprecision(2) << std::fixed;
 
-	std::shared_ptr<Function> l = std::make_shared<Log>();
+	std::shared_ptr<Function> l = std::make_shared<Log>(5);
 	std::shared_ptr<Function> r = std::make_shared<Sin>();
 	std::vector c{ 1, 2, 3, 4, 5 };
 	std::shared_ptr<Function> p = std::make_shared<Poly>(c);
-
 	std::shared_ptr<Function> sum_of_sin_ln = std::make_shared<Sum_functions>(l,r);
 	Sum_functions b(sum_of_sin_ln, l);
 
-	std::shared_ptr<Function> sum = std::make_shared<Sum_functions>(p, r);
-	std::shared_ptr<Function> mul = std::make_shared<Mul_functions>(p, r);
-	std::shared_ptr<Function> comp= std::make_shared<Compose_functions>(p, r);
+	std::shared_ptr<Function> sum = std::make_shared<Sum_functions>(l, r);
+	std::shared_ptr<Function> mul = std::make_shared<Mul_functions>(l, r);
+	std::shared_ptr<Function> comp= std::make_shared<Compose_functions>(sum, mul);
+	std::shared_ptr<Function> tryhard = std::make_shared<Compose_functions>(comp, r);
 	std::cout << comp.get()->get_equation() << ' ' << comp.get()->calculate(2) << std::endl;
-
+	//std::cout << tryhard.get()->get_equation() << ' ' << tryhard.get()->calculate(2) << std::endl;
 	
 	/*
 	int x = 8;

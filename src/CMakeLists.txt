@@ -7,4 +7,4 @@ target_sources (fun PRIVATE "main.cpp"
 							"Mul_functions.cpp"
 							"Compose_functions.cpp"
 							"Complex.cpp"
-							)
+							"Function_list.cpp")

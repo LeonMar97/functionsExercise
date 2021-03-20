@@ -5,19 +5,21 @@ Compose_functions::Compose_functions(const std::shared_ptr<Function>&func_l, con
 	:Complex(func_l, func_r,create_equation(func_l.get(),func_r.get()))
 {
 }
-//creates the equation for current sum function
-std::string Compose_functions::create_equation(const Function* f_l, const Function* f_r)const {
+/*creates the equation for current sum function
+ replacing the 'x' in the first function with the string of the second one
+
+*/ 
+ std::string Compose_functions::create_equation(const Function* f_l, const Function* f_r)const {
 
 	std::vector<int> x_locations;
 	auto left_equation = f_l->get_equation();
 	auto right_equation = f_r->get_equation();
 	for (int i = 0; i < f_l->get_equation().size(); i++) {
-		if (left_equation[i] == 'X') x_locations.push_back(i);
+		if (left_equation[i] == 'x') x_locations.push_back(i);
 	}
 
 	int steps = 0;
-	left_equation.resize(right_equation.length() * x_locations.size());
-
+ 
 	for (int i = 0; i < x_locations.size(); i++) {
 		left_equation.replace(x_locations[i] + steps, 1, f_r->get_equation());
 		steps += f_r->get_equation().size() - 1;
