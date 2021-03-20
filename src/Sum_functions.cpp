@@ -6,7 +6,7 @@ Sum_functions::Sum_functions(const std::shared_ptr<Function>&func_l, const std::
 }
 //creates the equation for current sum function
 std::string Sum_functions::create_equation(const Function* f_l, const Function* f_r)const {
-	return(f_l->get_equation() + "+" + f_r->get_equation());
+	return("(" + f_l->get_equation() + ")+(" + f_r->get_equation() + ")");
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 /* overide from class "funciton" calclates the sum of two complex\base functions

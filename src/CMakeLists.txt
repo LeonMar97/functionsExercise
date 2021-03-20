@@ -4,5 +4,6 @@ target_sources (fun PRIVATE "main.cpp"
 							"Sin.cpp"
 							"Function.cpp"
 							"Sum_functions.cpp"
+							"Mul_functions.cpp"
 							"Complex.cpp"
 							)

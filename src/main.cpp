@@ -5,6 +5,7 @@
 #include <macros.h>
 #include <iomanip>
 #include <Sum_functions.h>
+#include <Mul_functions.h>
 #pragma once
 
 /*
@@ -23,13 +24,17 @@ int main() {
 	std::cout << std::setprecision(2) << std::fixed;
 
 	std::shared_ptr<Function> l = std::make_shared<Log>();
-	std::cout << l.use_count() << std::endl;
-	auto r = std::make_shared<Sin>();
+	std::shared_ptr<Function> r = std::make_shared<Sin>();
+	std::vector c{ 1, 2, 3, 4, 5 };
+	std::shared_ptr<Function> p = std::make_shared<Poly>(c);
 
+	std::shared_ptr<Function> sum_of_sin_ln = std::make_shared<Sum_functions>(l,r);
+	Sum_functions b(sum_of_sin_ln, l);
 
-	Sum_functions a(l,r);
+	std::shared_ptr<Function> sum = std::make_shared<Sum_functions>(p, r);
+	std::shared_ptr<Function> mul = std::make_shared<Mul_functions>(p, r);
+	std::cout << mul.get()->get_equation() << ' ' << mul.get()->calculate(2) << std::endl;
 
-	std::cout << a.get_equation() << std::endl;
 	
 	/*
 	int x = 8;
