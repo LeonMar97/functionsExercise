@@ -4,7 +4,7 @@
 class Sum_functions:public Complex {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 public:
-	Sum_functions(std::shared_ptr<Function>& func_l, std::shared_ptr<Function>& func_r);
+	Sum_functions(const std::shared_ptr<Function>& func_l, const std::shared_ptr<Function>& func_r);
 	double  calculate(double x) const override;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//

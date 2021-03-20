@@ -4,7 +4,7 @@
 #include <Log.h>
 #include <macros.h>
 #include <iomanip>
-#include "Sum_functions.h"
+#include <Sum_functions.h>
 #pragma once
 
 /*
@@ -22,11 +22,15 @@ int main() {
 	
 	std::cout << std::setprecision(2) << std::fixed;
 
-	std::shared_ptr<Log>l;
-	std::shared_ptr<Sin>r;
-	
-	Sum_functions a(l,r );
+	std::shared_ptr<Function> l = std::make_shared<Log>();
+	std::cout << l.use_count() << std::endl;
+	auto r = std::make_shared<Sin>();
 
+
+	Sum_functions a(l,r);
+
+	std::cout << a.get_equation() << std::endl;
+	
 	/*
 	int x = 8;
 	double inp;
