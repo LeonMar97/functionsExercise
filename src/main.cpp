@@ -1,7 +1,7 @@
 #include <cmath>
 #include <Poly.h>
 #include <Sin.h>
-#include <Ln.h>
+#include <Log.h>
 #include <macros.h>
 #include <iomanip>
 #include "Sum_functions.h"
