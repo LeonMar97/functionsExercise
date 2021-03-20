@@ -1,5 +1,6 @@
 #include "Function.h"
 #include <memory>
+#pragma once
 class Complex : public Function {
 public:
 	Complex(const std::shared_ptr<Function>& left, const std::shared_ptr<Function>& right, std::string equation);
