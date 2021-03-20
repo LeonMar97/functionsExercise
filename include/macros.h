@@ -2,8 +2,13 @@
 #include<string.h>
 #include<map>
 
-std::map<std::string, int> Commands{
-	{"help", 1},
-	{"eval", 2},
-	{"exit", 3}
+enum Commands_t{
+	help_t = 1, eval_t, exit_t
 };
+
+std::map<const std::string, enum Commands_t> Commands{
+	{"help", help_t},
+	{"eval", eval_t},
+	{"exit", exit_t}
+};
+

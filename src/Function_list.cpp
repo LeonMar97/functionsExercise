@@ -22,15 +22,15 @@ void Function_list::run(){
 		auto temp = Commands[request];
 		switch (temp)
 		{
-			case 1:
+			case help_t:
 				print_help();
 				break;
-			case 2:
+			case eval_t:
 				std::cin >> func_num >> value;
 				std::cout << m_list[func_num].get()->calculate(value);
 				break;
-			case 3:
-				exit = false;
+			case exit_t:
+				exit = true;
 			default:
 				break;
 		}
