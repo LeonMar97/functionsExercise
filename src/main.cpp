@@ -4,6 +4,8 @@
 #include <Ln.h>
 #include <macros.h>
 #include <iomanip>
+#include "Sum_functions.h"
+#pragma once
 
 /*
  input in( ) {
@@ -17,7 +19,14 @@
 }
 */
 int main() {
+	
 	std::cout << std::setprecision(2) << std::fixed;
+
+	std::shared_ptr<Log>l;
+	std::shared_ptr<Sin>r;
+	
+	Sum_functions a(l,r );
+
 	/*
 	int x = 8;
 	double inp;
@@ -27,7 +36,7 @@ int main() {
 		else
 			break;
 	}
-	*/
+	
 	std::vector<int>co = { 0,5,6,0,3 };
 	Poly z(co);
 	auto sin = Sin();
@@ -44,5 +53,6 @@ int main() {
 	std::cout << std::endl;
 	std::cout << "value at 1: " << z.calculate(1.84) << std::endl;
 	std::cout << "log_5 of 5 is: " << log_5.calculate(5);
+	*/
 	return true;
 }

@@ -3,6 +3,6 @@ target_sources (fun PRIVATE "main.cpp"
 							"Ln.cpp"
 							"Sin.cpp"
 							"Function.cpp"
-							#"Sum_functions.cpp"
+							"Sum_functions.cpp"
 							"Complex.cpp"
 							)

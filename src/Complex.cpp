@@ -1,7 +1,9 @@
 #include "Complex.h"
 
 Complex::Complex(std::shared_ptr<Function> left, std::shared_ptr<Function> right, std::string equation)
-	: m_operandL(left), m_operandR(right), Function(equation) {}
+	: m_operandL(left), m_operandR(right), Function(equation) {
+	std::cout << m_operandL.use_count();
+}
 
 
 
