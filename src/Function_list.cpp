@@ -3,6 +3,9 @@
 #include "Log.h"
 #include "Sin.h"
 #include "Poly.h"
+#include "Sum_functions.h"
+#include "Mul_functions.h"
+#include "Compose_functions.h"
 Function_list::Function_list() {
 	//setting the firts base function requested from user..
 	m_list.emplace_back(std::make_shared<Log>());
@@ -14,8 +17,9 @@ Function_list::Function_list() {
 void Function_list::run(){
 	auto exit = false;
 	std::string request;
+	int first_function, second_function;
 	unsigned int func_num;
-	double value;
+	double value,base;
 	int int_value;
 	int deg;
 	std::vector<int> coefficients;
@@ -27,22 +31,77 @@ void Function_list::run(){
 		auto temp = Commands[request];
 		switch (temp)
 		{
+			//~~~~~~~~~~~~~~~~~case help~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case help_t:
 				print_help();
 				break;
+			//~~~~~~~~~~~~~~~~~case eval~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case eval_t:
-				std::cin >> func_num >> value;
-				m_list[func_num].get()->print(value);
+				std::cin >> first_function >> value;
+				if (value > 0 && first_function < m_list.size() && first_function >-1)
+				m_list[first_function].get()->print(value);
 				break;
+			//~~~~~~~~~~~~~~~~~case exit~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case exit_t:
 				exit = true;
+				break;
+			//~~~~~~~~~~~~~~~~~case poly~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case poly_t:
 				std::cin >> deg;
-				for (int i = 0; i < deg; i++) {
-					std::cin >> int_value;
-					coefficients.push_back(int_value);
+				if (deg >= 0) {
+					for (int i = 0; i < deg; i++) {
+						std::cin >> int_value;
+						if (int_value < 0)
+							break;
+						coefficients.push_back(int_value);
+					}
+					m_list.emplace_back(std::make_shared<Poly>((coefficients)));
 				}
-				m_list.emplace_back(Poly(coefficients));
+				break;
+			//~~~~~~~~~~~~~~~~~case add~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				case add_t:
+				std::cin >> first_function >> second_function;
+				if (first_function < m_list.size() && second_function < m_list.size()) {
+					m_list.emplace_back(std::make_shared<Sum_functions>(
+						m_list[first_function], m_list[second_function]));
+				}
+				break;
+			//~~~~~~~~~~~~~~~~~case mul~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				case mul_t:
+					std::cin >> first_function >> second_function;
+					if (first_function < m_list.size() && second_function < m_list.size() 
+						&&first_function > -1 && second_function > -1) {
+						m_list.emplace_back(std::make_shared<Mul_functions>(
+							m_list[first_function], m_list[second_function]));
+					}
+					break;
+			//~~~~~~~~~~~~~~~~~case comp~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				case comp_t:
+					std::cin >> first_function >> second_function;
+					if (first_function < m_list.size() && second_function < m_list.size()
+						&&first_function >-1 && second_function >-1) {
+							m_list.emplace_back(std::make_shared<Compose_functions>(
+								m_list[first_function], m_list[second_function]));
+					}
+					break;
+			//~~~~~~~~~~~~~~~~~case Log~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				case log_t:
+					std::cin >> base>>first_function;
+					if (base>0 && first_function < m_list.size()&& first_function >-1) {
+						m_list.emplace_back(std::make_shared<Compose_functions>
+							(std::make_shared<Log>(base),m_list[first_function]));
+					}
+					break;
+			//~~~~~~~~~~~~~~~~~case delete~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+				case del_t:
+					std::cin >> value;
+					if (value > -1 && value < m_list.size()) {
+						m_list[value].reset();
+						m_list.erase(m_list.begin() + value);
+					}
+				break;
+			//~~~~~~~~~~~~~~~~~case default~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 			default:
 				break;
 		}

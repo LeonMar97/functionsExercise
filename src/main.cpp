@@ -21,12 +21,12 @@
 }
 */
 int main() {
-
+	std::cout << std::setprecision(2) << std::fixed;
 	auto l = Function_list();
 	l.run();
 	
+	
 	/*
-	std::cout << std::setprecision(2) << std::fixed;
 
 	std::shared_ptr<Function> l = std::make_shared<Log>(5);
 	std::shared_ptr<Function> r = std::make_shared<Sin>();
