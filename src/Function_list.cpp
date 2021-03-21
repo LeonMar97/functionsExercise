@@ -2,6 +2,7 @@
 #include "macros.h"
 #include "Log.h"
 #include "Sin.h"
+#include "Poly.h"
 Function_list::Function_list() {
 	//setting the firts base function requested from user..
 	m_list.emplace_back(std::make_shared<Log>());
@@ -15,8 +16,12 @@ void Function_list::run(){
 	std::string request;
 	unsigned int func_num;
 	double value;
+	int int_value;
+	int deg;
+	std::vector<int> coefficients;
 
 	while (!exit) {
+		print_list();
 		std::cout << "Please enter a command(""help"" for command list): ";
 		std::cin >> request;
 		auto temp = Commands[request];
@@ -27,13 +32,30 @@ void Function_list::run(){
 				break;
 			case eval_t:
 				std::cin >> func_num >> value;
-				std::cout << m_list[func_num].get()->calculate(value);
+				m_list[func_num].get()->print(value);
 				break;
 			case exit_t:
 				exit = true;
+			case poly_t:
+				std::cin >> deg;
+				for (int i = 0; i < deg; i++) {
+					std::cin >> int_value;
+					coefficients.push_back(int_value);
+				}
+				m_list.emplace_back(Poly(coefficients));
 			default:
 				break;
 		}
+	}
+}
+
+void Function_list::print_list() {
+	std::cout << "this is the function list: " << std::endl;
+
+	for (int i = 0; i < m_list.size(); i++) {
+		std::cout << i << ": ";
+		m_list[i].get()->print();
+		std::cout << std::endl;
 	}
 }
 

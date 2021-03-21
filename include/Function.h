@@ -9,11 +9,12 @@
 class Function {
 private:
 	std::string m_equation;
-	std::string m_variable;
+	std::string m_variable = "x";
 public:
-	//Function() { m_equation = "default"; };
 	Function(std::string equation);
 	double virtual calculate(double x) const = 0;
 	void print() const;
-	std::string get_equation() const;
+	void print(double) const;
+	std::string virtual get_equation() const;
+	std::string assign(std::string value)const;
 };
