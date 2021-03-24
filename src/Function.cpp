@@ -18,11 +18,3 @@ std::string Function::get_equation() const {
 	return m_equation;
 }
 
-std::string Function::assign(std::string value) const
-{
-	auto assigned_equation = m_equation;
-	for (int i = m_equation.size() - 1; i >= 0; i--) {
-		if(m_equation[i] == 'x') assigned_equation.replace(i, 4, value);
-	}
-	return assigned_equation;
-}

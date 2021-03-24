@@ -16,5 +16,5 @@ public:
 	void print() const;
 	void print(double) const;
 	std::string virtual get_equation() const;
-	std::string assign(std::string value)const;
+	
 };

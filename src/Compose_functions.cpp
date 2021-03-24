@@ -25,6 +25,8 @@ Compose_functions::Compose_functions(const std::shared_ptr<Function>&func_l, con
 		left_equation.replace(x_locations[i] + steps, 1, f_r->get_equation());
 		steps += f_r->get_equation().size() - 1;
 	}
+
+
 	return left_equation;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
