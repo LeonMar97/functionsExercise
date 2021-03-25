@@ -21,7 +21,7 @@ std::string Poly::create_string(std::vector<int> poly_coefficients) {
 	auto equation = std::string();
 	for (int i = poly_coefficients.size()-1; i > -1;  i--) {
 		if (poly_coefficients[i] != 0) 
-			equation += std::to_string(poly_coefficients[i])+"*x^" + std::to_string(i) + " + ";
+			equation += std::to_string(poly_coefficients[i])+"*(x)^" + std::to_string(i) + " + ";
 	}
 	equation.resize(equation.length() - 3);
 	return(equation);

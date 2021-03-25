@@ -26,10 +26,8 @@ std::string Function::assign(std::string value) const
 	while (x_pos != std::string::npos) {
 		temp = m_equation.substr(total_pos , x_pos);
 		return_string += temp + value;
-		std::cout << return_string << std::endl;
 		total_pos += x_pos + 1;
 		x_pos = m_equation.substr(total_pos).find('x');
-		std::cout << "substr: " << m_equation.substr(total_pos) << std::endl;
 	}
 	return return_string + m_equation.substr(total_pos);
 }

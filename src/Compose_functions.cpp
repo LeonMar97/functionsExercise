@@ -1,6 +1,7 @@
 #include "Compose_functions.h"
 #include <vector>
 
+
 Compose_functions::Compose_functions(const std::shared_ptr<Function>&func_l, const std::shared_ptr<Function>& func_r)
 	:Complex(func_l, func_r,create_equation(func_l.get(),func_r.get())) {}
 /*creates the equation for current sum function

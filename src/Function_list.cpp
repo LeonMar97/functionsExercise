@@ -39,7 +39,7 @@ void Function_list::run(){
 			case eval_t:
 				std::cin >> first_function >> value;
 				if (value > 0 && first_function < m_list.size() && first_function >-1)
-				m_list[first_function].get()->print(value);
+				m_list[first_function]->print(value);
 				break;
 			//~~~~~~~~~~~~~~~~~case exit~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case exit_t:
@@ -113,7 +113,7 @@ void Function_list::print_list() {
 
 	for (int i = 0; i < m_list.size(); i++) {
 		std::cout << i << ": ";
-		m_list[i].get()->print();
+		m_list[i]->print();
 		std::cout << std::endl;
 	}
 }
