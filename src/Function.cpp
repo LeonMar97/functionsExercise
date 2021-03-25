@@ -8,9 +8,7 @@ void Function::print() const{
 }
 
 void Function::print(double value) const {
-	for (int i = 0; i < m_equation.size(); i++) {
-		(m_equation[i] != 'x') ? (std::cout << m_equation[i]) : (std::cout << value);
-	}
+	std::cout << assign(std::to_string(value).substr(0, std::to_string(value).find('.') + 3));
 	std::cout << "= " << this->calculate(value) << std::endl;
 }
 
@@ -20,9 +18,18 @@ std::string Function::get_equation() const {
 
 std::string Function::assign(std::string value) const
 {
-	auto assigned_equation = m_equation;
-	for (int i = m_equation.size() - 1; i >= 0; i--) {
-		if(m_equation[i] == 'x') assigned_equation.replace(i, 4, value);
+	std::string return_string{}; //return value
+	auto x_pos = m_equation.find('x');
+	size_t total_pos = 0;
+	std::string temp{};
+	int i = 0;
+	while (x_pos != std::string::npos) {
+		temp = m_equation.substr(total_pos , x_pos);
+		return_string += temp + value;
+		std::cout << return_string << std::endl;
+		total_pos += x_pos + 1;
+		x_pos = m_equation.substr(total_pos).find('x');
+		std::cout << "substr: " << m_equation.substr(total_pos) << std::endl;
 	}
-	return assigned_equation;
+	return return_string + m_equation.substr(total_pos);
 }
