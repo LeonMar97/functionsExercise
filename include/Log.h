@@ -10,5 +10,5 @@ public:
 	std::string set_logString(double num);
 
 private:
-	double ln_base;
+	double m_lnBase;
 };

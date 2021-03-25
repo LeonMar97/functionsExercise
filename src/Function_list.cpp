@@ -38,7 +38,7 @@ void Function_list::run(){
 			//~~~~~~~~~~~~~~~~~case eval~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case eval_t:
 				std::cin >> first_function >> value;
-				if (value > 0 && first_function < m_list.size() && first_function >-1)
+				if (first_function < m_list.size() && first_function >-1)
 				m_list[first_function]->print(value);
 				break;
 			//~~~~~~~~~~~~~~~~~case exit~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

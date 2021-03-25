@@ -9,7 +9,6 @@
 class Function {
 private:
 	std::string m_equation;
-	std::string m_variable = "x";
 public:
 	Function(std::string equation);
 	double virtual calculate(double x) const = 0;
