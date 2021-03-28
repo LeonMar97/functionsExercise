@@ -28,6 +28,16 @@ Functions Calculator is a calculator capable of performing basic operations on a
 # Details and design
 The functions are displayed on the terminal in the form of a list, onto which the user can add the wanted function, using commands that operate on a function or a pair of functions.
 
-We used 
+## Classes
+**Function**: ADT base class from which all functions in the calculator inherit. it holds the equation for the function, and the calculation/print methods.
+**Log**: The logarithm function. default constructor initializes to natural logarithm, additional constructor recieves a positive value and initalizes to logarithm in the given base.
+**Sin**: The sin function
+**Polynomial**: The polynomial function. has a constructor that gets vector of coefficients.
+**ComplexFun**: ADT base class from which all user-built functions will inherit. 
+**SumFunction**: for all functions that are generated using the addition operator
+**MulFunction**: for all functions that are generated using the multiplication operator
+**ComposeFunction**: for all functions that are generated using the composition operator
+**List**: data structure of calculator.
 
+## UML
 ![img](https://i.imgur.com/7svMebS.png)
