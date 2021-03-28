@@ -54,6 +54,7 @@ The functions are displayed on the terminal in the form of a list, onto which th
 We built a class "Function_list" as data structure. it contains a vector for shared pointers of type Function (ADT).
 It can add new functions to the vector, remove functions, and the entire program runs based on this class.
 
-#Noteworthy algorithms
-
-#Known Bugs
+# Noteworthy algorithms
+None
+# Known Bugs
+None
