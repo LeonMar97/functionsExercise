@@ -18,7 +18,7 @@ Functions Calculator is a calculator capable of performing basic operations on a
 
 **"log N num"** - Creates a function that computes log N of function #num
 
-*"del(ete) num"**- Deletes function #num from function list
+**"del(ete) num"**- Deletes function #num from function list
 
 **"help"** - Prints this help screen
 **"exit"**- Exits the program
@@ -30,4 +30,4 @@ The functions are displayed on the terminal in the form of a list, onto which th
 
 We used 
 
-
+![uml] (https://imgur.com/7svMebS)
