@@ -30,4 +30,4 @@ The functions are displayed on the terminal in the form of a list, onto which th
 
 We used 
 
-![uml] (https://imgur.com/7svMebS)
+[img](https://i.imgur.com/7svMebS.png)
