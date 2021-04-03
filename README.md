@@ -10,7 +10,7 @@ Functions Calculator is a calculator capable of performing basic operations on a
 
 **"poly(nomial)N c0 c1 ... cN-1"**- Creates a polynomial with N coefficients
 
-**"mul(tiply)"**num1 num2 - Creates a function that is the multiplication of function #num1 and function #num2
+**"mul(tiply)"** num1 num2 - Creates a function that is the multiplication of function #num1 and function #num2
 
 **"add num1 num2 "**- Creates a function that is the sum of function #num1 and function #num2
 
