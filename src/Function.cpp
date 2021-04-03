@@ -1,5 +1,7 @@
 #include <Function.h>
 #include <vector>
+#include <sstream>
+#include <iomanip>
 
 Function::Function(std::string equation) : m_equation(equation) {}
 
@@ -8,7 +10,13 @@ void Function::print() const{
 }
 
 void Function::print(double value) const {
-	std::cout << assign(std::to_string(value).substr(0, std::to_string(value).find('.') + 3));
+
+	std::ostringstream temp;
+	temp << std::setprecision(3) << std::noshowpoint;
+	temp << value;
+	std::cout << assign(temp.str());
+
+	//std::cout << assign(std::to_string(value).substr(0, std::to_string(value).find('.') + 3));
 	std::cout << "= " << this->calculate(value) << std::endl;
 }
 
