@@ -16,7 +16,7 @@ Log::Log(double num) : Function(set_logString(num)), m_lnBase(std::log(num)) {}
 //she said that we should alwayes round 2 numbers after the dot ..
 std::string Log::set_logString(double num) {
 	std::ostringstream temp;
-	temp << std::setprecision(3) << std::noshowpoint<<num;
+	temp <<  std::noshowpoint<<num;
 	return "log_" + temp.str() + "(x)";
 	
 }
