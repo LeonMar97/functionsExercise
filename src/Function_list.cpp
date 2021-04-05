@@ -1,4 +1,4 @@
-#include"Function_list.h"
+#include "Function_List.h"
 #include "macros.h"
 #include "Log.h"
 #include "Sin.h"
@@ -47,6 +47,7 @@ void Function_list::run(){
 				break;
 			//~~~~~~~~~~~~~~~~~case poly~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case poly_t:
+				coefficients.clear();
 				std::cin >> deg;
 				if (deg >= 0) {
 					for (int i = 0; i < deg; i++) {

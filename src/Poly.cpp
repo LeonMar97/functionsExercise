@@ -12,12 +12,12 @@ double Poly::calculate(double x) const{//val
 }
 
 //constructor using own function incase you wondering
-Poly::Poly(std::vector<int> cur) :
+Poly::Poly(std::vector<int>& cur) :
 	Function(this->create_string(cur)),m_coefficients(cur)
 {}
 
 //creats the the equation for  function 
-std::string Poly::create_string(std::vector<int> poly_coefficients) {
+std::string Poly::create_string(std::vector<int>& poly_coefficients) {
 	auto equation = std::string();
 	for (int i = poly_coefficients.size()-1; i > -1;  i--) {
 		if (poly_coefficients[i] != 0) 

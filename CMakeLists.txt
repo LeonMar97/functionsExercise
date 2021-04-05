@@ -1,7 +1,4 @@
-﻿# CMakeList.txt : CMake project for Project_adi_gutman_leon_markovich, include source and define
-# project specific logic here.
-#
-cmake_minimum_required (VERSION 3.15)
+﻿cmake_minimum_required (VERSION 3.15)
 
 project (fun)
 
@@ -17,4 +14,3 @@ add_executable (fun "")
 
 add_subdirectory (include)
 add_subdirectory (src)
-#add_subdirectory (resources)
