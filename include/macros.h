@@ -7,7 +7,7 @@ enum Commands_t{
 };
 
 std::map<const std::string, enum Commands_t> Commands{
-	{"delete",del_t},
+	{"del" , del_t },
 	{"help", help_t},
 	{"eval", eval_t},
 	{"exit", exit_t},
