@@ -22,7 +22,7 @@ void Function_list::run(){
 	double value,base;
 	int int_value;
 	int num_coef;
-	std::vector<int> coefficients;
+	std::vector<double> coefficients;
 
 	while (!exit) {
 		print_list();
@@ -52,8 +52,8 @@ void Function_list::run(){
 				std::cin >> num_coef;
 				if (num_coef >= 0) {
 					for (int i = 0; i < num_coef; i++) {
-						std::cin >> int_value;
-						coefficients.push_back(int_value);
+						std::cin >> value;
+						coefficients.push_back(value);
 					}
 					m_list.emplace_back(std::make_shared<Poly>((coefficients)));
 				}

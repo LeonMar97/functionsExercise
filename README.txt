@@ -1,6 +1,9 @@
 # Functions Calculator
 **written by Ronen Heifetz && Leon Markovich**
 
+# github 
+https://github.com/LeonMar97/functionsExercise
+
 Functions Calculator is a calculator capable of performing basic operations on a given set of functions, such as generating new functions out of already generated once, and evaluation at a real point in the domain of a certain function.
 
 
@@ -58,5 +61,3 @@ It can add new functions to the vector, remove functions, and the entire program
 None
 # Known Bugs
 None
-# github 
-https://github.com/LeonMar97/functionsExercise

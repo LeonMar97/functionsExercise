@@ -4,10 +4,10 @@
 
 class Poly:public Function {
 private:
-	std::vector<int>m_coefficients;
+	std::vector<double>m_coefficients;
 public:
 	
-	std::string create_string(std::vector<int>& poly_coefficients);
-	Poly(std::vector<int>& cur);
+	std::string create_string(std::vector<double>& poly_coefficients);
+	Poly(std::vector<double>& cur);
 	 double virtual calculate(double x) const;//val
 };
