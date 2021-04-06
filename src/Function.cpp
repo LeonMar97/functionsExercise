@@ -12,7 +12,7 @@ void Function::print() const{
 void Function::print(double value) const {
 
 	std::ostringstream temp;
-	temp  << std::noshowpoint<<value;
+	temp << std::setprecision(2) << std::fixed << std::noshowpoint << value;
 	std::cout << assign(temp.str());
 
 	//std::cout << assign(std::to_string(value).substr(0, std::to_string(value).find('.') + 3));
