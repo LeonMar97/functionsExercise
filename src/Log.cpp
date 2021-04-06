@@ -24,5 +24,5 @@ std::string Log::set_logString(double num) {
 }
 //return log of x in the given base
 double Log::calculate(double x) const{
-	return std::log(x)/m_lnBase;
+	return std::log(x)/m_lnBase; //calculate log in the given base
 }

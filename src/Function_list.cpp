@@ -21,7 +21,7 @@ void Function_list::run(){
 	unsigned int func_num;
 	double value,base;
 	int int_value;
-	int deg;
+	int num_coef;
 	std::vector<int> coefficients;
 
 	while (!exit) {
@@ -39,7 +39,8 @@ void Function_list::run(){
 			case eval_t:
 				std::cin >> first_function >> value;
 				if (first_function < m_list.size() && first_function >-1)
-				m_list[first_function]->print(value);
+					m_list[first_function]->print(value);
+				else print_error("function number");
 				break;
 			//~~~~~~~~~~~~~~~~~case exit~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case exit_t:
@@ -48,16 +49,15 @@ void Function_list::run(){
 			//~~~~~~~~~~~~~~~~~case poly~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			case poly_t:
 				coefficients.clear();
-				std::cin >> deg;
-				if (deg >= 0) {
-					for (int i = 0; i < deg; i++) {
+				std::cin >> num_coef;
+				if (num_coef >= 0) {
+					for (int i = 0; i < num_coef; i++) {
 						std::cin >> int_value;
-						if (int_value < 0)
-							break;
 						coefficients.push_back(int_value);
 					}
 					m_list.emplace_back(std::make_shared<Poly>((coefficients)));
 				}
+				else print_error("num of coefficients");
 				break;
 			//~~~~~~~~~~~~~~~~~case add~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				case add_t:
@@ -66,32 +66,36 @@ void Function_list::run(){
 					m_list.emplace_back(std::make_shared<Sum_functions>(
 						m_list[first_function], m_list[second_function]));
 				}
+				else print_error("function number");
 				break;
 			//~~~~~~~~~~~~~~~~~case mul~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				case mul_t:
 					std::cin >> first_function >> second_function;
-					if (first_function < m_list.size() && second_function < m_list.size() 
-						&&first_function > -1 && second_function > -1) {
+					if (first_function < m_list.size() && second_function < m_list.size()
+						&& first_function > -1 && second_function > -1) {
 						m_list.emplace_back(std::make_shared<Mul_functions>(
 							m_list[first_function], m_list[second_function]));
 					}
+					else print_error("function number");
 					break;
 			//~~~~~~~~~~~~~~~~~case comp~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				case comp_t:
 					std::cin >> first_function >> second_function;
 					if (first_function < m_list.size() && second_function < m_list.size()
-						&&first_function >-1 && second_function >-1) {
-							m_list.emplace_back(std::make_shared<Compose_functions>(
-								m_list[first_function], m_list[second_function]));
+						&& first_function >-1 && second_function >-1) {
+						m_list.emplace_back(std::make_shared<Compose_functions>(
+							m_list[first_function], m_list[second_function]));
 					}
+					else print_error("function number");
 					break;
 			//~~~~~~~~~~~~~~~~~case Log~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				case log_t:
 					std::cin >> base>>first_function;
-					if (base>0 && first_function < m_list.size()&& first_function >-1) {
+					if (base > 0 && first_function < m_list.size() && first_function >-1) {
 						m_list.emplace_back(std::make_shared<Compose_functions>
-							(std::make_shared<Log>(base),m_list[first_function]));
+							(std::make_shared<Log>(base), m_list[first_function]));
 					}
+					else print_error("log arguments");
 					break;
 			//~~~~~~~~~~~~~~~~~case delete~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 				case del_t:
@@ -100,17 +104,23 @@ void Function_list::run(){
 						m_list[value].reset();
 						m_list.erase(m_list.begin() + value);
 					}
+					else print_error("function number");
 				break;
 			//~~~~~~~~~~~~~~~~~case default~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 			default:
+				print_error("command");
 				break;
 		}
 	}
 }
 
+void Function_list::print_error(std::string error_type) {
+	std::cerr << "ERROR: Please enter valid " + error_type << std::endl << std::endl ;
+}
+
 void Function_list::print_list() {
-	std::cout << "this is the function list: " << std::endl;
+	std::cout << "this is the function list: " << std::endl << std::endl;
 
 	for (int i = 0; i < m_list.size(); i++) {
 		std::cout << i << ": ";
@@ -135,4 +145,8 @@ void Function_list::print_help() {
 
 		"help - Prints this help screen\n"
 		"exit - Exits the program\n";
+}
+
+Function_list::~Function_list() {
+	std::cout << "Goodbye";
 }

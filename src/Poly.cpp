@@ -1,8 +1,5 @@
 #include<Poly.h>
-/*
-Poly::Poly(std::vector<int> cur) 
-	: m_coefficients(cur), Function(cur), m_deg(cur[0]) {}
-	*/
+
 double Poly::calculate(double x) const{//val
 	double sum=0;
 	for (unsigned int i = 0; i < m_coefficients.size(); i++) {
@@ -23,6 +20,7 @@ std::string Poly::create_string(std::vector<int>& poly_coefficients) {
 		if (poly_coefficients[i] != 0) 
 			equation += std::to_string(poly_coefficients[i])+"*(x)^" + std::to_string(i) + " + ";
 	}
-	equation.resize(equation.length() - 3);
+	if (equation.size()) equation.resize(equation.length() - 3); //if polynomial is not 0, theres additioal " + " at the end
+	else equation = "0"; //if polynomial is 0 set its equation as just 0
 	return(equation);
 }
